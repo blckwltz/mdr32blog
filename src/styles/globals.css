@@ -9,6 +9,7 @@
 html * {
   font-family: Roboto, sans-serif;
   -webkit-tap-highlight-color: rgb(0 0 0 / 0%);
+  -webkit-text-size-adjust: 100%;
   -webkit-touch-callout: none;
 }
 
@@ -24,13 +25,11 @@ body {
   min-width: 320px;
   margin: 0 auto;
   overflow-x: auto;
-
-  & a {
-    color: inherit;
-    text-underline-offset: 3px;
-    text-decoration-thickness: 1px;
-    text-decoration-skip-ink: none;
-  }
+  background-color: var(--background-color-main);
+  color: var(--text-color);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
 
   & button {
     outline: none;
@@ -39,5 +38,16 @@ body {
 
   & button:focus {
     outline-style: none;
+  }
+
+  & img {
+    display: block;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  & strong {
+    font-family: inherit;
+    font-weight: inherit;
   }
 }

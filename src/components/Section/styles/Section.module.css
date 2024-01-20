@@ -1,0 +1,39 @@
+.section {
+  color: var(--text-color);
+
+  & h2 {
+    margin: 0 0 16px;
+    color: var(--title-color);
+    font-family: 'Russo One', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  & p {
+    margin: 0 0 14px;
+  }
+
+  & ul {
+    margin: 0;
+    padding: 0 0 0 20px;
+
+    & li {
+      padding: 5px 0;
+    }
+  }
+
+  & a {
+    border-bottom: 1px solid var(--link-decoration-color);
+    color: var(--link-color);
+    text-decoration: none;
+
+    &:hover {
+      border-color: transparent;
+    }
+
+    &:active {
+      color: var(--link-active-color);
+    }
+  }
+}

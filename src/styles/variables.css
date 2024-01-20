@@ -1,0 +1,15 @@
+:root {
+  --background-color-main: #ffffff;
+  --background-color-contrast: #000000;
+  --background-color-accent: #3e3e3e;
+
+  --border-color: #eeeeee;
+
+  --title-color: #000000;
+  --text-color: #444444;
+  --text-color-light: #555555;
+
+  --link-color: #ff9900;
+  --link-decoration-color: #ff8000;
+  --link-active-color: #ff0000;
+}

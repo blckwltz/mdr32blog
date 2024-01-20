@@ -1,0 +1,11 @@
+.footer {
+  display: grid;
+  place-items: center;
+  padding: 10px 0;
+  background-color: var(--background-color-contrast);
+
+  & img {
+    width: 100px;
+    height: auto;
+  }
+}

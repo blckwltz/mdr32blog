@@ -1,11 +1,16 @@
 import '@/styles/globals.css';
 import '@/styles/fonts.css';
-import type {Metadata} from 'next';
+import '@/styles/variables.css';
+import type {Viewport} from 'next';
 import type {PropsWithChildren} from 'react';
+import Footer from '@/components/Footer/Footer';
+import Header from '@/components/Header/Header';
 
-export const metadata: Metadata = {
-  title: 'MDR32 - микроконтроллеры российского производства',
-  description: 'Описание функций пинов (Pinout) российского микроконтроллера K1986BE92QI (MDR32F9Q2I)',
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export default function RootLayout(props: PropsWithChildren) {
@@ -13,7 +18,11 @@ export default function RootLayout(props: PropsWithChildren) {
 
   return (
     <html lang="ru">
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

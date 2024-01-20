@@ -1,0 +1,48 @@
+.main {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 20px 10px 40px;
+  border-top: 3px solid var(--border-color);
+}
+
+.mainTitle {
+  margin: 0 0 18px;
+  color: var(--title-color);
+  font-family: 'Russo One', sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 32px;
+  text-align: center;
+
+  & strong {
+    letter-spacing: 1px;
+  }
+}
+
+.section {
+  &:not(:last-child) {
+    margin: 0 0 18px;
+  }
+}
+
+.characteristics {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+
+  & td {
+    padding: 10px;
+
+    &:first-child {
+      width: 260px;
+      border-bottom: 1px dotted var(--border-color);
+      color: var(--text-color-light);
+    }
+
+    &:last-child {
+      width: 60px;
+      font-weight: 700;
+    }
+  }
+}
