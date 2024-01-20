@@ -1,0 +1,43 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html * {
+  font-family: Roboto, sans-serif;
+  -webkit-tap-highlight-color: rgb(0 0 0 / 0%);
+  -webkit-touch-callout: none;
+}
+
+html,
+body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  margin: 0 auto;
+  overflow-x: auto;
+
+  & a {
+    color: inherit;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    text-decoration-skip-ink: none;
+  }
+
+  & button {
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  & button:focus {
+    outline-style: none;
+  }
+}
