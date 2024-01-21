@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Section from '@/components/Section/Section';
+import {IMAGES_PATH} from '@/lib/constants/common';
 import type PostData from '@/lib/types/PostData';
 import styles from './styles/MainPage.module.css';
 
@@ -22,9 +23,9 @@ export default function MainPage(props: MainPageProps) {
         </figcaption>
         <meta itemProp="author" content="www.mdr32.ru" />
         <meta itemProp="name" content="Pinout K1986BE92QI" />
-        <a href="/images/pinout.png" target="_blank">
+        <a href={`${IMAGES_PATH}/pinout.png`} target="_blank">
           <Image
-            src="/images/pinout.png"
+            src={`${IMAGES_PATH}/pinout.png`}
             alt="Pinout K1986BE92QI"
             width="600"
             height="600"
