@@ -5,9 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "npm run build && touch out/.nojekyll",
+    "deploy": "gh-pages -d out -t true",
+    "postdeploy": "git push --follow-tags"
   },
   "dependencies": {
+    "gh-pages": "^6.1.1",
     "gray-matter": "^4.0.3",
     "next": "14.1.0",
     "react": "^18",
