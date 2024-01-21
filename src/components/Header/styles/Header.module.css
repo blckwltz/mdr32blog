@@ -1,27 +1,12 @@
 .header {
-  padding: 20px 0;
-  border-top: 20px solid var(--background-color-accent);
-  text-align: center;
-}
-
-.pinout {
-  width: fit-content;
-  margin: 0 auto;
-  padding: 0 5px;
-
-  & figcaption {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    white-space: nowrap;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-  }
+  display: grid;
+  justify-items: start;
+  align-items: center;
+  padding: 10px;
+  background-color: var(--background-color-accent);
 
   & img {
-    width: 100%;
-    max-width: 600px;
+    width: 100px;
     height: auto;
   }
 }

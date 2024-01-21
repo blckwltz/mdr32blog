@@ -3,7 +3,6 @@
   max-width: 650px;
   margin: 0 auto;
   padding: 20px 10px 40px;
-  border-top: 3px solid var(--border-color);
 }
 
 .mainTitle {
@@ -23,6 +22,29 @@
 .section {
   &:not(:last-child) {
     margin: 0 0 18px;
+  }
+}
+
+.pinout {
+  width: fit-content;
+  margin: 0 auto 20px;
+  padding: 0 5px 10px;
+  border-bottom: 3px solid var(--border-color);
+
+  & figcaption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+  }
+
+  & img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
   }
 }
 

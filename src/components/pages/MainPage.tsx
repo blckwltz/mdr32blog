@@ -1,12 +1,38 @@
+import Image from 'next/image';
+import Link from 'next/link';
 import Section from '@/components/Section/Section';
+import type PostData from '@/lib/types/PostData';
 import styles from './styles/MainPage.module.css';
 
-export default function MainPage() {
+interface MainPageProps {
+  posts: PostData[];
+}
+
+export default function MainPage(props: MainPageProps) {
+  const {posts} = props;
+
   return (
     <main className={styles.main}>
       <h1 className={styles.mainTitle}>
         Микроконтроллер <strong>K1986BE92QI</strong>
       </h1>
+      <figure className={styles.pinout} itemScope itemType="http://schema.org/ImageObject">
+        <figcaption itemProp="description">
+          Описание функций пинов (Pinout) российского микроконтроллера K1986BE92QI
+        </figcaption>
+        <meta itemProp="author" content="www.mdr32.ru" />
+        <meta itemProp="name" content="Pinout K1986BE92QI" />
+        <a href="/images/pinout.png" target="_blank">
+          <Image
+            src="/images/pinout.png"
+            alt="Pinout K1986BE92QI"
+            width="600"
+            height="600"
+            priority={true}
+            itemProp="contentUrl"
+          />
+        </a>
+      </figure>
       <Section className={styles.section}>
         <h2>Описание и&nbsp;параметры</h2>
         <p>
@@ -190,6 +216,20 @@ export default function MainPage() {
             </tr>
           </tbody>
         </table>
+      </Section>
+      <Section className={styles.section}>
+        <h2>Статьи</h2>
+        <ul>
+          {posts.map((post) => {
+            const {id, date, title} = post;
+
+            return (
+              <li key={id}>
+                {date}&nbsp;&mdash; <Link href={`/posts/${id}`}>{title}</Link>
+              </li>
+            );
+          })}
+        </ul>
       </Section>
       <Section className={styles.section}>
         <h2>Ресурсы</h2>
