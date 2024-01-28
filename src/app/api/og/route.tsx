@@ -18,8 +18,9 @@ export async function GET() {
       </div>
     ),
     {
-      width: 1200,
-      height: 630,
+      headers: {
+        'Content-Type': 'image/png',
+      },
     },
   );
 }
