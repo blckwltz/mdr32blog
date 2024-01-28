@@ -1,3 +1,4 @@
+import type {BlogPosting, WithContext} from 'schema-dts';
 import PostPage from '@/components/pages/PostPage';
 import {getAllPosts, getPostById} from '@/lib/api/api';
 
@@ -25,7 +26,14 @@ export default async function Page(props: PageParams) {
   } = props;
   const post = await getPostById(id);
 
-  return <PostPage post={post} />;
+  const jsonLd: WithContext<BlogPosting> = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    name: post.title,
+    description: post.description,
+  };
+
+  return <PostPage post={post} schemaOrgData={jsonLd} />;
 }
 
 export async function generateStaticParams() {
