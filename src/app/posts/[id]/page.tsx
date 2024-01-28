@@ -22,7 +22,13 @@ export async function generateMetadata(params: PageParams): Promise<Metadata> {
     openGraph: {
       title,
       description,
-      images: `${OG_IMAGE_PATH}`,
+      images: [
+        {
+          url: `${OG_IMAGE_PATH}`,
+          type: 'image/png',
+          alt: title,
+        },
+      ],
     },
   };
 }
