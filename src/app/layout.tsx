@@ -1,10 +1,15 @@
 import '@/styles/globals.css';
 import '@/styles/fonts.css';
 import '@/styles/variables.css';
-import type {Viewport} from 'next';
+import type {Metadata, Viewport} from 'next';
 import type {PropsWithChildren} from 'react';
 import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header';
+import {APP_HOST} from '@/lib/constants/common';
+
+export const metadata: Metadata = {
+  metadataBase: new URL(APP_HOST),
+};
 
 export const viewport: Viewport = {
   width: 'device-width',
