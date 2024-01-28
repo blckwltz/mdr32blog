@@ -1,6 +1,8 @@
+import type {Metadata} from 'next';
 import type {BlogPosting, WithContext} from 'schema-dts';
 import PostPage from '@/components/pages/PostPage';
 import {getAllPosts, getPostById} from '@/lib/api/api';
+import {OG_IMAGE_PATH} from '@/lib/constants/common';
 
 interface PageParams {
   params: {
@@ -8,7 +10,7 @@ interface PageParams {
   };
 }
 
-export async function generateMetadata(params: PageParams) {
+export async function generateMetadata(params: PageParams): Promise<Metadata> {
   const {
     params: {id},
   } = params;
@@ -17,6 +19,11 @@ export async function generateMetadata(params: PageParams) {
   return {
     title,
     description,
+    openGraph: {
+      title,
+      description,
+      images: `${OG_IMAGE_PATH}`,
+    },
   };
 }
 
