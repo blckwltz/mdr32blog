@@ -1,6 +1,9 @@
 import type {MetadataRoute} from 'next';
+import {getAllPosts} from '@/lib/api/api';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const posts = await getAllPosts();
+
   return [
     {
       url: 'https://mdr32.ru',
@@ -8,11 +11,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 1,
     },
-    {
-      url: 'https://mdr32.ru/posts',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.5,
-    },
+    ...posts.map(({id, date}) => ({
+      url: `https://mdr32.ru/posts/${id}`,
+      lastModified: date,
+      priority: 0.7,
+    })),
   ];
 }
